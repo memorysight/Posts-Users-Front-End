@@ -1,0 +1,68 @@
+.menu-grid h1 {
+    font-family: 'Abel', sans-serif;
+    font-size:42px;
+  }
+  
+  .menu-grid-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+  
+  .menu-grid-element {
+    background: #9E8273;
+    max-height: 430px;
+    animation: animateGrid 0.5s;
+    overflow: hidden;
+    color:black;
+    
+    float:center;
+    font-size:15px;
+    /* font-family: 'Oswald', sans-serif;
+    font-family: 'Sigmar One', cursive; */
+    font-style: italic;
+    margin: 10px;
+    /* border-left: 10px; */
+    letter-spacing: 2px;
+    /* direction: rtl; */
+    text-shadow: 3px 2px red;
+    vertical-align: text-top;
+    padding-left: 50px;
+    font-family: 'Oswald', sans-serif;
+font-family: 'Sigmar One', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Cinzel', serif;
+border-style: inset;
+border-block-color: black;
+    
+  }
+
+  img:hover {
+    opacity: 0.5;
+  }
+
+
+  
+  @keyframes animateGrid {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+  }
+  
+  @media screen and (max-width: 720px) {
+    .rmdb-grid-content {
+      grid-template-columns: auto auto;
+    }
+  
+    .rmdb-grid-element:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  
+    .rmdb-grid h1 {
+      font-size:22px;
+    }
+  }
