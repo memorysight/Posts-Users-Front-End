@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import FourColGrid from './FourColGrid/FourColGrid';
 import {withRouter} from 'react-router-dom';
 
 
@@ -20,7 +20,7 @@ class Axios extends Component {
 
      handleClick=(element)=>()=>{
         // console.log("element", element)
-        this.props.history.push(`/users/${element.userId}`)
+        this.props.history.push(`/posts/${element.userId}`)
         
     }
 
@@ -88,12 +88,12 @@ class Axios extends Component {
               
              
              
-             {users.map((user, key)=>(
+             {posts.map((user, key)=>(
                  <div className = "menu-grid-element" onClick={this.handleClick(user)}>
 
 
-                 <h1>{users[key].firstName}   </h1>
-                 <img src={users[key].image} alt="Users pics"/>
+                 <h1>{posts[key].title}   </h1>
+                 <img src={posts[key].image} alt="Users pics"/>
                  {/* <img src={`https://source.unsplash.com/480X480/?kitchens`} alt="kitchen"></img> */}
                  {/* </Link> */}
                  </div>
@@ -103,10 +103,10 @@ class Axios extends Component {
 
              <h1>Posts</h1>
              <br></br>
-             {posts.map((post, key)=>(
+             {users.map((post, key)=>(
                  <div>
-                 <h1>{posts[key].title}   </h1>
-                 <img src={posts[key].image} alt="Post pics"/>
+                 <h1>{users[key].firstName}   </h1>
+                 <img src={users[key].image} alt="Post pics"/>
                  </div>
           
               

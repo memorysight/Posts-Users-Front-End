@@ -11,8 +11,8 @@
   }
   
   .menu-grid-element {
-    background: #9E8273;
-    max-height: 430px;
+    background: #89A4DE;
+    max-height: 430px; 
     animation: animateGrid 0.5s;
     overflow: hidden;
     color:black;

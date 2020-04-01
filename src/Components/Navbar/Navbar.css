@@ -16,7 +16,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:rgb(154, 200, 26);
+    background-color:#FFD17C;
     font-family: 'Oswald', sans-serif;
 font-family: 'Sigmar One', cursive;
 font-family: 'Righteous', cursive;
@@ -37,7 +37,7 @@ border-block-color: black;
   
   li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

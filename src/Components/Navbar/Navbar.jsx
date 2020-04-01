@@ -14,13 +14,13 @@ const NavBar=()=> {
                 </li>
                 {/* <li>
                     <Link to="/customers">Customers</Link>
-                </li>
-                <li>
-                    <Link to="/items">Items</Link>
-                </li>
-                <li>
-                    <Link to="/kitchens">Kitchens</Link>
                 </li> */}
+                <li>
+                    <Link to="/posts">Posts</Link>
+                </li>
+                <li>
+                    <Link to="/users">Users</Link>
+                </li>
                 <h3 className="navbar-heading">Sleaks Freaks 2020 </h3>
             </ul>
             
