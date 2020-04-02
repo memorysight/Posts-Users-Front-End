@@ -1,73 +1,77 @@
-// import React, { Component } from 'react';
-// import Navbar from '../Navbar/Navbar';
-// import axios from 'axios';
-// import {withRouter} from 'react-router-dom';
-// import './Kitchens.css';
+import React, { Component } from 'react';
+import Navbar from '../Navbar/Navbar';
+import axios from 'axios';
+import {withRouter} from 'react-router-dom';
+import './Post.css';
 
-//  class PostDetails extends Component {
-//     state={
-//         kitchens:[],
-//         selectedItems:[]
-//      }
+ class PostDetails extends Component {
+    state={
+        users:[],
+        selectedUsers:[]
+     }
 
-//      handleSelectItem =(item)=>()=>{
+     handleSelectPost =(post)=>()=>{
        
-//         this.setState({
-//             selectedItems : [...this.state.selectedItems, item]
-//         })
+        this.setState({
+            selectedPosts : [...this.state.selectedPosts, post]
+        })
 
-//      }
+     }
 
-//     componentDidMount(){
+    componentDidMount(){
        
-//          axios.get('http://localhost:8080/app-api/items')
-//         .then(({data})=>{
+         axios.get('http://localhost:8080/app-api/users')
+        .then(({data})=>{
      
         
-//         const foundKitchens = [];
-//         data.forEach((item)=>{
-//             // console.log(item.kitchens)
-//             item.kitchens.forEach(kitchen=>{
+        const foundUsers = [];
+        data.forEach((user)=>{
+            // console.log(item.kitchens)
+            user.posts.forEach(post=>{
             
-//                 if(kitchen.kitchenId===parseInt(this.props.match.params.id)){
+                if(post.postId===parseInt(this.props.match.params.id)){
                     
-//                     foundKitchens.push(item)
-//                 }
+                    foundUsers.push(user)
+                }
                
                
-//             })
+            })
 
-//         })
+        })
 
 
-//         this.setState({
-//             kitchens: foundKitchens
-//         })
-//         })
-//     }
-//     render() {
-//         console.log(this.state.selectedItems)
+        this.setState({
+            users: foundUsers
+        })
+        })
+    }
+    render() {
+        console.log(this.state.selectedUsers)
         
-//         return (
-//             <div >
-//                 <Navbar />
-//                 <h3 >{this.state.kitchens.name}</h3>
-//                 {this.state.kitchens.map(kitchen=>{
-//                     return <p className="kitchen-details heading">{kitchen.name}: {kitchen.price}<button className = "button4" onClick={this.handleSelectItem({name: kitchen.name, price: kitchen.price})}>Select Item</button></p>
-//                 })}
+        return (
+            <div >
+                <Navbar />
+                <h4 className="heading">These Are the Lucky People who Lol'd</h4>
+                <h3 >{this.state.users.firstName}</h3>
+                <img src={this.state.users.image} alt="Post pics"/>  
+                {this.state.users.map(user=>{
+                    return <p className="kitchen-details heading">{user.firstName}: {user.lastName}<button className = "button4" onClick={this.handleSelectPost({firstName: user.firstName, lastName: user.lastName})}>Select Item</button></p>
+                })}
 
-//                 <div className="heading">
-//                     <h2 >Shopping Cart</h2>
-//                    <hr></hr>
-//                     {this.state.selectedItems.map((item, i)=>{
-//                         console.log("item",item);
-//                         return  <p><span>{item.name}</span> :
-//                         <span>{item.price}</span></p>
-//                     })}
-//                 </div>
+                <div className="heading">
+                    <h2 >ReSend a Sleak!</h2>
+                   <hr></hr>
+                    {this.state.selectedUsers.map((user, i)=>{
+                        console.log("user",user);
+                        return  <p><span>{user.firstName}</span> :
+                        <span>  <img src={user.image} alt="Post pics"/></span></p>
+                   
+                        
+                    })}
+                </div>
 
-//             </div>
-//         )
-//     }
-// }
-// export default withRouter(KitchenDetails);
+            </div>
+        )
+    }
+}
+export default withRouter(PostDetails);

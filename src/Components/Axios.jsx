@@ -20,7 +20,7 @@ class Axios extends Component {
 
      handleClick=(element)=>()=>{
         // console.log("element", element)
-        this.props.history.push(`/posts/${element.userId}`)
+        this.props.history.push(`/posts/${element.postId}`)
         
     }
 
@@ -101,7 +101,7 @@ class Axios extends Component {
              ))}
              </div>
 
-             <h1>Posts</h1>
+             {/* <h1>Posts</h1>
              <br></br>
              {users.map((post, key)=>(
                  <div>
@@ -111,17 +111,22 @@ class Axios extends Component {
           
               
                 
-             ))}
+             ))} */}
              <br></br>
                <h1>Users</h1>
+               <div className="menu-grid-content">
+               
                
              {users.map((customer, key)=>(
-                 <div>
+                 <div className="menu-grid-element">
+                    
                  <h1>{users[key].firstName}   </h1>
                  <img src={users[key].image} alt="Users pics"/>
                  </div>
+               
           
              ))}
+             </div>
               {/* <Customers customers={customers} /> */}
           
              
