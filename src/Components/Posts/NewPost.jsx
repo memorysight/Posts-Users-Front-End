@@ -17,6 +17,7 @@ export default class NewPost extends Component {
             body: "",
             image: "",
             confidence: "",
+            money: ""
             }
          
         }
@@ -109,6 +110,10 @@ render(){
         <div className="kitchen-details">
         <label htmlFor="Confidence">Confidence</label>
         <input onChange={this.handleChange} value={this.state.post.confidence} name="confidence" id="Confidence" className="kitchen-details"></input>
+        </div>
+        <div className="kitchen-details">
+        <label htmlFor="Money">Money</label>
+        <input onChange={this.handleChange} value={this.state.post.money} name="money" id="Money" className="kitchen-details"></input>
         </div>
         <button type="submit" className= "button2">Submit</button> 
         </div>

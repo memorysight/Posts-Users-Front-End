@@ -18,7 +18,8 @@ function App() {
 
       <Switch>
 
-      <Route path="/posts/new" component={NewPost}/>
+      {/* <Route path="/posts/new" component={NewPost}/> */}
+      <Route path="//localhost:8080/posts/new" component={NewPost}/>
       <Route path="/posts/:id" component={PostDetails}/>
       <Route path='/users/new' component={NewUser}/>
       <Route path="/users/:id" component={UserDetails}/>

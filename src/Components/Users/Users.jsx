@@ -32,7 +32,7 @@ export default class Kitchens extends Component {
         
 }
 
-handleNewKitchen = () => {
+handleNewUser = () => {
     this.props.history.push('/users/new');
   };
 

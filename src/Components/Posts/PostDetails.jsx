@@ -6,68 +6,91 @@ import './Post.css';
 
  class PostDetails extends Component {
     state={
-        users:[],
-        selectedUsers:[]
+        users: [],
+        selectedUser: null,
+        post: null
      }
 
-     handleSelectPost =(post)=>()=>{
-       
-        this.setState({
-            selectedPosts : [...this.state.selectedPosts, post]
-        })
-
+     handleSelectPost = (id)=> {
+        const selectedUser = this.state.users.find(user => user.userId === parseInt(id));
+        this.setState({ selectedUser });
      }
 
     componentDidMount(){
+        const URL_POST= `http://localhost:8080/app-api/posts/${this.props.match.params.id}`;
+        axios.get(URL_POST,  {headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json',
+        }})
+        .then((res)=>{ this.setState({ post: res.data })})
        
          axios.get('http://localhost:8080/app-api/users')
-        .then(({data})=>{
-     
-        
-        const foundUsers = [];
-        data.forEach((user)=>{
-            // console.log(item.kitchens)
-            user.posts.forEach(post=>{
-            
-                if(post.postId===parseInt(this.props.match.params.id)){
+            .then(({ data })=>{
+                const foundUsers = [];
+                data.forEach((user)=>{
+                    // console.log(item.kitchens)
+                    user.posts.forEach(post=>{
                     
-                    foundUsers.push(user)
-                }
-               
-               
-            })
+                        if(post.postId===parseInt(this.props.match.params.id)){
+                            
+                            foundUsers.push(user)
+                        }
+                    
+                    
+                    })
 
-        })
+                })
 
 
-        this.setState({
-            users: foundUsers
-        })
+            this.setState({users: foundUsers})
         })
     }
+
     render() {
-        console.log(this.state.selectedUsers)
-        
-        return (
+        const { post, users, selectedUser } = this.state;
+        const { image, body } = post ? post : {};
+
+        return ( 
             <div >
                 <Navbar />
+
+                <div className="postDetailPage">
+                    {post && 
+                        <div className="imageContainer">
+                            <img src={image} alt={body} />
+                           
+                        </div>
+                       
+                         
+                    }
+                </div>
                 <h4 className="heading">These Are the Lucky People who Lol'd</h4>
-                <h3 >{this.state.users.firstName}</h3>
-                <img src={this.state.users.image} alt="Post pics"/>  
-                {this.state.users.map(user=>{
-                    return <p className="kitchen-details heading">{user.firstName}: {user.lastName}<button className = "button4" onClick={this.handleSelectPost({firstName: user.firstName, lastName: user.lastName})}>Select Item</button></p>
+                {/* <h3 >{this.state.users.firstName}</h3> */}
+
+               
+                {/* {this.state.posts.map(post=>{
+                    return <p className="kitchen-details heading">
+                            <img src={post.image[this.props.match.params.id]} alt="kitchens pics"/>{post.title[this.props.match.params.id]}: {post.body[this.props.match.params.id]}<button className = "button4" onClick={this.handleSelectPost({firstName: post.title[this.props.match.params.id], lastName: post.body[this.props.match.params.id]})}>Select Item</button></p>
+                    
+                })} */}
+            
+              
+                {users.map(user=>{
+                    return <p className="kitchen-details heading">
+                            <img src={user.image} alt="kitchens pics"/>{user.firstName} {user.lastName}<button className = "button4" onClick={this.handleSelectPost.bind(this, user.userId)}>Select Item</button></p>
+                    
                 })}
+              
 
                 <div className="heading">
-                    <h2 >ReSend a Sleak!</h2>
+                    <h2 >Select the Best Caption!</h2>
                    <hr></hr>
-                    {this.state.selectedUsers.map((user, i)=>{
-                        console.log("user",user);
-                        return  <p><span>{user.firstName}</span> :
-                        <span>  <img src={user.image} alt="Post pics"/></span></p>
-                   
-                        
-                    })}
+                    { selectedUser && 
+                        <div>
+                            <p><span>{selectedUser.firstName}</span> :
+                            <img src={selectedUser.image} alt="Post pics"/></p>
+                        </div>
+                    }
                 </div>
 
             </div>

@@ -45,8 +45,10 @@ handelDelete = async post =>{
 
 handleNewItem = () => {
     // Navigate to /products
-    //this.props.history.replace("/products");
-    this.props.history.push('/posts/new');
+    // this.props.history.replace("/products");
+    // this.props.history.push('/posts/new');
+    // this.props.history.push('localhost:8080/posts/new');
+    window.location = 'http://localhost:8080/posts/new';
   };
     
     render() {
@@ -71,6 +73,7 @@ handleNewItem = () => {
                 <th> Body </th>
                 <th> Image </th>
                 <th> Confidence </th>
+                <th> Money </th>
                 <th> Delete </th>
                 </tr>
                 
@@ -83,6 +86,7 @@ handleNewItem = () => {
                 <td> {post.body}</td>
                 <td> {post.image}</td>
                 <td> {post.confidence}</td>
+                <td> {post.money}</td>
                 <td> 
                     <button className="btn btn-danger btn-sm"
                     onClick={()=>this.handelDelete(post)}>Delete</button>

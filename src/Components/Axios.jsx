@@ -3,25 +3,21 @@ import axios from 'axios';
 import FourColGrid from './FourColGrid/FourColGrid';
 import {withRouter} from 'react-router-dom';
 
-
-
-
-
 class Axios extends Component {
     constructor(props){
       super(props);
       
       this.state={
           posts: [],
-          users:[],
+          users:[]
+          
         //   customers:[] 
       }
     }
 
      handleClick=(element)=>()=>{
-        // console.log("element", element)
+        console.log("element", element)
         this.props.history.push(`/posts/${element.postId}`)
-        
     }
 
     componentDidMount(){
@@ -82,7 +78,8 @@ class Axios extends Component {
             <div>
            
             
-             <h1 className="heading">Embarrass your Friends or Yourself!</h1>
+             <h1 className="heading">The Funniest Caption Wins!</h1>
+             <h3 className="heading2">All Proceeds go to Covid19 Research!</h3>
              
              <div className="menu-grid-content">
               
@@ -94,6 +91,7 @@ class Axios extends Component {
 
                  <h1>{posts[key].title}   </h1>
                  <img src={posts[key].image} alt="Users pics"/>
+                 <h3 classname="body-text">{posts[key].body}   </h3>
                  {/* <img src={`https://source.unsplash.com/480X480/?kitchens`} alt="kitchen"></img> */}
                  {/* </Link> */}
                  </div>
@@ -112,13 +110,15 @@ class Axios extends Component {
               
                 
              ))} */}
+
+             <hr></hr>
              <br></br>
-               <h1>Users</h1>
-               <div className="menu-grid-content">
+               <h1 className="heading">Users</h1>
+               <div className="menu-grid-content2">
                
                
              {users.map((customer, key)=>(
-                 <div className="menu-grid-element">
+                 <div className="menu-grid-element2">
                     
                  <h1>{users[key].firstName}   </h1>
                  <img src={users[key].image} alt="Users pics"/>
