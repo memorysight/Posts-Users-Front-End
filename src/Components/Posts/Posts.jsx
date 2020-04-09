@@ -32,6 +32,15 @@ export default class Posts extends Component {
      
         
 }
+handleUpdate = async post =>{
+    const posts = this.state.posts.find(p=>p.postId );
+    this.setState({
+        posts
+    })
+    await axios.put(URL_POST + '/' + post.postId);
+}
+
+
 
 handelDelete = async post =>{
     const posts = this.state.posts.filter(p=>p.postId!==post.postId);
@@ -74,6 +83,7 @@ handleNewItem = () => {
                 <th> Image </th>
                 <th> Confidence </th>
                 <th> Money </th>
+                <th> Update </th>
                 <th> Delete </th>
                 </tr>
                 
@@ -87,6 +97,12 @@ handleNewItem = () => {
                 <td> {post.image}</td>
                 <td> {post.confidence}</td>
                 <td> {post.money}</td>
+
+                <td> 
+                    <button className="btn btn-danger btn-sm"
+                    onClick={()=>this.handleUpdate(post)}>Update</button>
+                </td>
+
                 <td> 
                     <button className="btn btn-danger btn-sm"
                     onClick={()=>this.handelDelete(post)}>Delete</button>

@@ -80,6 +80,7 @@ class Axios extends Component {
             
              <h1 className="heading">The Funniest Caption Wins!</h1>
              <h3 className="heading2">All Proceeds go to Covid19 Research!</h3>
+             <h3 className="heading2">Click On Images for Details</h3>
              
              <div className="menu-grid-content">
               
@@ -90,6 +91,8 @@ class Axios extends Component {
 
 
                  <h1>{posts[key].title}   </h1>
+                 <h3>Date: {posts[key].date}</h3>
+                 <h3>Money:{ posts[key].money}</h3>
                  <img src={posts[key].image} alt="Users pics"/>
                  <h3 classname="body-text">{posts[key].body}   </h3>
                  {/* <img src={`https://source.unsplash.com/480X480/?kitchens`} alt="kitchen"></img> */}
