@@ -32,6 +32,14 @@ export default class Posts extends Component {
      
         
 }
+
+handleReply = async post =>{
+    const posts = this.state.posts.find(p=>p.postId );
+    this.setState({
+        posts
+    })
+    await axios.put(URL_POST + '/' + post.postId);
+}
 handleUpdate = async post =>{
     const posts = this.state.posts.find(p=>p.postId );
     this.setState({
@@ -83,6 +91,7 @@ handleNewItem = () => {
                 <th> Image </th>
                 <th> Confidence </th>
                 <th> Money </th>
+                <th> Reply </th>
                 <th> Update </th>
                 <th> Delete </th>
                 </tr>
@@ -97,6 +106,10 @@ handleNewItem = () => {
                 <td> {post.image}</td>
                 <td> {post.confidence}</td>
                 <td> {post.money}</td>
+                <td> 
+                    <button className="btn btn-danger btn-sm"
+                    onClick={()=>this.handleeReply(post)}>Reply</button>
+                </td>
 
                 <td> 
                     <button className="btn btn-danger btn-sm"

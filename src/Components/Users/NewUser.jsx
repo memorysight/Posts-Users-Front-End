@@ -10,39 +10,31 @@ export default class NewUser extends Component {
     
 
     state = {
-            user:{
+        user:{
             //itemId: '',
             firstName: "",
             lastName: "",
             password: "",
             email: "",
             role: "",
-            image: ""
-            
-            }
-         
-        }
+            image: "",
+            posts: []
+        },
+        postsFromApi:[]
+    }
   
         
-    componentDidMount(){
-
-       const {handle} = this.props.match.params;
-
-        
-
-        
-        // axios.get(URL_ITEM,  {headers: {
-        //     'Access-Control-Allow-Origin': '*',
-        //     'Content-Type': 'application/json',
-        //   }},)
-        // .then((res)=>{
-        //  let items = res.data;
-        //  this.setState({
-        //      items
-        //  })
-        //  console.log("these are the items", items);
-        // })  
+componentDidMount(){
+    const URL_POST= 'http://localhost:8080/app-api/posts';
+    axios.get(URL_POST,  {headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+    }},)
+    .then((res) => {
+        this.setState({ postsFromApi: res.data });
+    })
 }
+
 
 handleSubmit=(e)=>{
     e.preventDefault();
@@ -77,20 +69,43 @@ handleSubmit=(e)=>{
 
 }
 
+handleOptionsChange = e => {
+    const options = e.target.options;
+    const posts = [];
+
+    Array.from(options).forEach(option => {
+        if (option.selected) {
+            posts.push(option.value);
+        }
+    });
+    // merging posts into user.
+    // Object.assign does the same
+    // Object.assign({}, this.state.user, posts)
+    this.setState({ user: {...this.state.user, posts }})
+}
+
 handleChange= e =>{
     const user = {...this.state.user};
     user[e.currentTarget.name] = e.currentTarget.value;
     this.setState({user});
 };
 
+handleSelect = (e)=>{
+
+    const posts = Array.from(e.target.options)
+        .filter(option => option.selected)
+        .map(option => parseInt(option.value));
+
+    this.setState({user:{...this.state.user, posts}});
+}
 
 render(){
-    console.log(this.state);
+    console.log('posts: ', this.state.user.posts);
     return(
         <React.Fragment>
         <Navbar />
         
-        <h3 className="heading">Create a New USer</h3>
+        <h3 className="heading">Create a New User</h3>
         <div>
         <form onSubmit={this.handleSubmit}>
         <div className="kitchen-details">
@@ -116,6 +131,16 @@ render(){
         <label htmlFor="Image">Image URL</label>
         <input onChange={this.handleChange} value={this.state.user.image} name="image" id="Image" className="kitchen-details"></input>
         </div>
+        
+        <div className="kitchen-details">
+        <label htmlFor="posts">Select a post to associate with this user</label>
+        <select id="posts" multiple onChange={this.handleOptionsChange}>
+            {this.state.postsFromApi.map(({postId, title}) => {
+                return <option value={postId}>{title}</option>;
+            })}
+        </select>
+        </div>
+        
         <button type="submit" className= "button2">Submit</button> 
         </div>
         </form>
@@ -124,8 +149,10 @@ render(){
        
 
         </React.Fragment>
+ 
 
     );
+    
 }
 
 

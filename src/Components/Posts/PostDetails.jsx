@@ -35,12 +35,8 @@ import './Post.css';
                             
                             foundUsers.push(user)
                         }
-                    
-                    
                     })
-
                 })
-
 
             this.setState({users: foundUsers})
         })
@@ -58,13 +54,24 @@ import './Post.css';
                     {post && 
                         <div className="imageContainer">
                             <img src={image} alt={body} />
+                            <div>
+                            Price: ${post.money}
+                            </div>
+                            <div>
+                            Confidence: {post.confidence}
+                            
+                            <div>
+                             {post.body}
+                            </div>
+                            <hr></hr>
+                            </div>
                            
                         </div>
                        
                          
                     }
                 </div>
-                <h4 className="heading">These Are the Lucky People who Lol'd</h4>
+                <h4 className="heading">Users In the Running to Win this Post</h4>
                 {/* <h3 >{this.state.users.firstName}</h3> */}
 
                

@@ -21,9 +21,11 @@
     
 }
 
-body{
+/* body{
     background-color:#DDF9FF;
-}
+} */
+
+
 
 .postDetailPage{
 
@@ -219,8 +221,35 @@ input[type=text] {
 
   }
 
- .imageContainer{
-     /* display:none; */
+ .imageContainer img{
+   width:440px;
  }
 
-  
+ @keyframes bgcolor {
+  0% {
+      background-color: #95b7cf
+  }
+
+  30% {
+      background-color: #7fb3d8
+  }
+
+  60% {
+      background-color: #b9c49e
+  }
+
+  90% {
+      background-color: rgb(185, 219, 168)
+  }
+
+  100% {
+      background-color: #e7dc9e
+  }
+}
+
+body {
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}

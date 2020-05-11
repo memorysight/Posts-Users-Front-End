@@ -36,7 +36,16 @@ handleNewUser = () => {
     this.props.history.push('/users/new');
   };
 
-handelDelete = async user =>{
+handleUpdate = async user =>{
+    const users = this.state.users.filter(u=>u.userId!==user.userId);
+    this.setState({
+        users
+    })
+    await axios.delete(URL_USER + '/' + user.userId);
+}
+
+
+handleDelete = async user =>{
     const users = this.state.users.filter(u=>u.userId!==user.userId);
     this.setState({
         users
@@ -59,13 +68,15 @@ handelDelete = async user =>{
                 <body>
                 <table>
                 <tr>
+                <th> User ID</th>
                 <th> User First Name </th>
                 <th> User Last Name </th>
                 <th> User Password </th>
                 <th> User Email </th>
                 <th> User Role </th>
                 <th> User Image </th>
-                <th>Delete</th>
+                <th> Update</th>
+                <th> Delete</th>
                 </tr>
 
                 
@@ -80,7 +91,11 @@ handelDelete = async user =>{
                 <td> {user.image}</td>
                 <td> 
                     <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handelDelete(user)}>Delete</button>
+                    onClick={()=>this.handleUpdate(user)}>Update</button>
+                </td>
+                <td> 
+                    <button className="btn btn-danger btn-sm"
+                    onClick={()=>this.handleDelete(user)}>Delete</button>
                 </td>
                 </tr>
                 )
