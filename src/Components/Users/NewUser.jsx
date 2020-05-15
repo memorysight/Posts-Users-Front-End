@@ -7,8 +7,6 @@ import Posts from '../Posts/Posts';
 
 export default class NewUser extends Component {
 
-    
-
     state = {
         user:{
             //itemId: '',
@@ -23,7 +21,6 @@ export default class NewUser extends Component {
         postsFromApi:[]
     }
   
-        
 componentDidMount(){
     const URL_POST= 'http://localhost:8080/app-api/posts';
     axios.get(URL_POST,  {headers: {
@@ -75,7 +72,7 @@ handleOptionsChange = e => {
 
     Array.from(options).forEach(option => {
         if (option.selected) {
-            posts.push(option.value);
+            posts.push({postId: parseInt(option.value)});
         }
     });
     // merging posts into user.
@@ -90,8 +87,7 @@ handleChange= e =>{
     this.setState({user});
 };
 
-handleSelect = (e)=>{
-
+handleSelect = (e) => {
     const posts = Array.from(e.target.options)
         .filter(option => option.selected)
         .map(option => parseInt(option.value));
