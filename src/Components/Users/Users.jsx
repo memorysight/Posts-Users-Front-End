@@ -53,6 +53,9 @@ handleDelete = async user =>{
     await axios.delete(URL_USER + '/' + user.userId);
 }
 
+handleNavigation = (userId) => {
+    this.props.history.push(`/users/${userId}`);
+}
 
     render() {
         return (
@@ -66,41 +69,40 @@ handleDelete = async user =>{
 
                 <div>
                 <body>
-                <table>
-                <tr>
-                <th> User ID</th>
-                <th> User First Name </th>
-                <th> User Last Name </th>
-                <th> User Password </th>
-                <th> User Email </th>
-                <th> User Role </th>
-                <th> User Image </th>
-                <th> Update</th>
-                <th> Delete</th>
-                </tr>
+                    <table>
+                        <tr>
+                            <th> User ID</th>
+                            <th> User First Name </th>
+                            <th> User Last Name </th>
+                            <th> User Password </th>
+                            <th> User Email </th>
+                            <th> User Role </th>
+                            <th> User Image </th>
+                            <th> Update</th>
+                            <th> Delete</th>
+                        </tr>
 
-                
-                {this.state.users.map(user => ( 
-                <tr key={user.userId}>
-                <td >{user.userId}</td>
-                <td >{user.firstName}</td>
-                <td> {user.lastName} </td> 
-                <td> {user.password}</td>
-                <td> {user.email}</td>
-                <td> {user.role}</td>
-                <td> {user.image}</td>
-                <td> 
-                    <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handleUpdate(user)}>Update</button>
-                </td>
-                <td> 
-                    <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handleDelete(user)}>Delete</button>
-                </td>
-                </tr>
-                )
-                )}
-                </table>
+                        
+                        {this.state.users.map(user => ( 
+                            <tr key={user.userId} onClick={this.handleNavigation.bind(this, user.userId)}>
+                                <td>{user.userId}</td>
+                                <td>{user.firstName}</td>
+                                <td>{user.lastName} </td> 
+                                <td>{user.password}</td>
+                                <td>{user.email}</td>
+                                <td>{user.role}</td>
+                                <td>{user.image}</td>
+                                <td> 
+                                    <button className="btn btn-danger btn-sm"
+                                    onClick={()=>this.handleUpdate(user)}>Update</button>
+                                </td>
+                                <td> 
+                                    <button className="btn btn-danger btn-sm"
+                                    onClick={()=>this.handleDelete(user)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </table>
                 </body>
                 </div>   
 

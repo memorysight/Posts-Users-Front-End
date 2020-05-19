@@ -72,14 +72,7 @@ import './Post.css';
                     }
                 </div>
                 <h4 className="heading">Users In the Running to Win this Post</h4>
-                {/* <h3 >{this.state.users.firstName}</h3> */}
-
-               
-                {/* {this.state.posts.map(post=>{
-                    return <p className="kitchen-details heading">
-                            <img src={post.image[this.props.match.params.id]} alt="kitchens pics"/>{post.title[this.props.match.params.id]}: {post.body[this.props.match.params.id]}<button className = "button4" onClick={this.handleSelectPost({firstName: post.title[this.props.match.params.id], lastName: post.body[this.props.match.params.id]})}>Select Item</button></p>
-                    
-                })} */}
+          
             
               
                 {users.map(user=>{

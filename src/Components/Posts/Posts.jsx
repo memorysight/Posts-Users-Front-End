@@ -15,8 +15,6 @@ export default class Posts extends Component {
     
 
     componentDidMount(){
-
-
         const URL_POST= 'http://localhost:8080/app-api/posts';
         axios.get(URL_POST,  {headers: {
             'Access-Control-Allow-Origin': '*',
@@ -61,15 +59,12 @@ handelDelete = async post =>{
 
 
 handleNewItem = () => {
-    // Navigate to /products
-    // this.props.history.replace("/products");
-    // this.props.history.push('/posts/new');
-    // this.props.history.push('localhost:8080/posts/new');
+  
     window.location = 'http://localhost:8080/posts/new';
   };
     
     render() {
-        // console.log("Inside item file",this.props.items)
+     
         console.log("POSTSPROPS:",this.props)
         return (
             <div>
@@ -123,20 +118,6 @@ handleNewItem = () => {
                 </tr>
                 )
                 )}
-
-                {/* The props map */}
-                {/* {this.props.items.map(item => ( 
-                <tr key={item.itemId}>
-                <td >{item.itemId}</td>
-                <td >{item.name}</td>
-                <td> {item.price} </td> 
-                <td> {item.ingredients}</td>
-                <td> {item.description}</td>
-                </tr>
-                )
-                )} */}
-
-
 
                 </table>
                 </body>

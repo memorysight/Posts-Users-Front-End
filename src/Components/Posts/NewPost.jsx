@@ -1,47 +1,25 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Navbar from '../Navbar/Navbar';
-//import Item from '..Items/Item';
 import Users from '../Users/Users';
 
 
 export default class NewPost extends Component {
-
-    
-
     state = {
-            post:{
-            //itemId: '',
+        post:{
             title: "",
             date: "",
             body: "",
             image: "",
             confidence: "",
             money: ""
-            }
-         
         }
+    }
   
         
     componentDidMount(){
-
        const {handle} = this.props.match.params;
-
-        
-
-        
-        // axios.get(URL_ITEM,  {headers: {
-        //     'Access-Control-Allow-Origin': '*',
-        //     'Content-Type': 'application/json',
-        //   }},)
-        // .then((res)=>{
-        //  let items = res.data;
-        //  this.setState({
-        //      items
-        //  })
-        //  console.log("these are the items", items);
-        // })  
-}
+    }
 
 handleSubmit=(e)=>{
     e.preventDefault();
@@ -50,30 +28,7 @@ handleSubmit=(e)=>{
     axios.post(URL_POST, this.state.post,{headers: {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
-      }},)
-
-    // const URL_KIT= 'http://localhost:8080/app-api/kitchens';
-    // axios.post(URL_KIT,  this.state.kitchen, {headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Content-Type': 'application/json',
-    //   }},)
-    
-    //  console.log("Kitchen Directory", kitchens);
-    
-
-// let items = {
-//     itemId: this.state.items.itemsid,
-//     description: values.description,
-//     targetDate: values.targetDate
-// }
-
-// if (this.state.id === -1) {
-//     TodoDataService.createTodo(username, todo)
-//         .then(() => this.props.history.push('/todos'))
-// }
-
-//axios.post('/URL_ITEM', items);
-
+      }})
 }
 
 handleChange= e =>{
