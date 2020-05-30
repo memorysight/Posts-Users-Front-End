@@ -19,7 +19,7 @@ const NavBar=()=> {
                 <li>
                     <Link to="/users">Users</Link>
                 </li>
-                <h3 className="navbar-heading">CaptionLol'd 2020 </h3>
+                <h3 className="navbar-heading">Exotic Auto Auction 2020 </h3>
                
             </ul>
             

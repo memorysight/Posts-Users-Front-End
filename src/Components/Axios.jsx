@@ -63,7 +63,7 @@ class Axios extends Component {
             
             <div>
  
-             <h1 className="heading">The Funniest Caption Wins!</h1>
+             <h1 className="heading">The Exclusive Auto Auction Marketplace!</h1>
              <h3 className="heading2">All Proceeds go to Covid19 Research!</h3>
              <h3 className="heading2">Click On Images for Details</h3>
              

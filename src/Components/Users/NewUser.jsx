@@ -75,26 +75,32 @@ export default class NewUser extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <div className="kitchen-details">
                             <label htmlFor="User First Name">User First Name</label>
-                            <input onChange={this.handleChange} value={this.state.user.firstName} name ="firstName" id="User First Name" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.firstName} 
+                            name ="firstName" id="User First Name" className="kitchen-details"></input>
                         </div>
                         <div className="kitchen-details">
                             <label htmlFor="User Last Name">User Last Name</label>
-                            <input onChange={this.handleChange} value={this.state.user.lastName} name="lastName" id="lastName" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.lastName} 
+                            name="lastName" id="lastName" className="kitchen-details"></input>
                         </div>
                         <div className="kitchen-details">
                             <label htmlFor="User Password">User Password</label>
-                            <input onChange={this.handleChange} value={this.state.user.password} name="password" id="Password" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.password} 
+                            name="password" id="Password" className="kitchen-details"></input>
                         </div>
                         <div className="kitchen-details">
                             <label htmlFor="Email">Email</label>
-                            <input onChange={this.handleChange} value={this.state.user.email} name="email" id="Email" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.email} 
+                            name="email" id="Email" className="kitchen-details"></input>
                         <div className="kitchen-details">
                             <label htmlFor="Role">Role</label>
-                            <input onChange={this.handleChange} value={this.state.user.role} name="role" id="Role" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.role} 
+                            name="role" id="Role" className="kitchen-details"></input>
                         </div>
                         <div className="kitchen-details">
                             <label htmlFor="Image">Image URL</label>
-                            <input onChange={this.handleChange} value={this.state.user.image} name="image" id="Image" className="kitchen-details"></input>
+                            <input onChange={this.handleChange} value={this.state.user.image} 
+                            name="image" id="Image" className="kitchen-details"></input>
                         </div>
                         
                         <div className="kitchen-details">

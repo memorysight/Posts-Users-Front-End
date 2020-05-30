@@ -60,7 +60,7 @@ export default class HeroImage extends Component {
 
         return (
             <>  
-                <h1 className="heading">Welcome to CaptionLol'd!</h1>
+                <h1 className="heading">Welcome EAA!</h1>
                 {posts.length >= 3 && 
                     <div className="hero-image">{this.getRandomPosts()}</div>
                
@@ -71,18 +71,3 @@ export default class HeroImage extends Component {
     }
 }
 
-// return (
-        //     {posts.map((post, key)=>(
-        //         <div className = "hero-image" >
-
-        //         <div className="hero-image-Main">
-        //         <img src={posts[key][0].image} />
-        //         <img src={posts[key][1].image} />
-        //         <img src={posts[key][2].image} />
-        //         </div>
-           
-        //         </div>
-               
-        //     ))}
-           
-        // )
