@@ -56,6 +56,9 @@ handelDelete = async post =>{
     await axios.delete(URL_POST + '/' + post.postId);
 }
 
+handleNavigation = (postId) => {
+    this.props.history.push(`/posts/${postId}`);
+}
 
 
 handleNewItem = () => {
@@ -93,7 +96,7 @@ handleNewItem = () => {
                 
                 
                 {this.state.posts.map(post => ( 
-                <tr key={post.itemId}>
+                <tr key={post.itemId} onClick = {this.handleNavigation.bind(this, post.postId)}>
                 <td >{post.postId}</td>
                 <td >{post.title}</td>
                 <td> {post.date} </td> 
