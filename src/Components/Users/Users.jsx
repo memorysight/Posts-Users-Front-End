@@ -64,7 +64,7 @@ handleNavigation = (userId) => {
 
                 <div>
                 <button className="button3" 
-                    onClick={() => this.handleNewUser()}>Create New User</button>
+                    onClick={() => this.handleNewUser()}>Exploit Expert</button>
                 </div>
 
                 <div>

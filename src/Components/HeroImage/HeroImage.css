@@ -1,8 +1,26 @@
-div.hero-image img{
+/* div.hero-image img{
     
     width: 33%;
-}
+} */
 
 
   
+  
+
+div.hero-image img {
+    /* float: left;  */
+    
+
+
+     width:  777px;
+    height: 777px;
+    object-fit: cover; 
+
+/* 
+    float:center;
+    font-size:50px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;  */
+}
   

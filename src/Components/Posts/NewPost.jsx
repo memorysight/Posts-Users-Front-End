@@ -44,11 +44,11 @@ render(){
         <React.Fragment>
         <Navbar />
         
-        <h3 className="heading">Create a New Post</h3>
+        <h3 className="heading">Purchase a New Car</h3>
         <div>
         <form onSubmit={this.handleSubmit}>
         <div className="kitchen-details">
-        <label htmlFor="Post Title">Post Title</label>
+        <label htmlFor="Post Title">Vehicle Name</label>
         <input onChange={this.handleChange} value={this.state.post.title} name ="title" id="Post Title" className="kitchen-details"></input>
         </div>
         <div className="kitchen-details">
@@ -63,7 +63,7 @@ render(){
         <label htmlFor="Image">Image</label>
         <input onChange={this.handleChange} value={this.state.post.image} name="image" id="Image" className="kitchen-details"></input>
         <div className="kitchen-details">
-        <label htmlFor="Confidence">Confidence</label>
+        <label htmlFor="Confidence">Prestige Level</label>
         <input onChange={this.handleChange} value={this.state.post.confidence} name="confidence" id="Confidence" className="kitchen-details"></input>
         </div>
         <div className="kitchen-details">

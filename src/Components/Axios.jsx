@@ -63,8 +63,9 @@ class Axios extends Component {
             
             <div>
  
-             <h1 className="heading">The Exclusive Auto Auction Marketplace!</h1>
-             <h3 className="heading2">All Proceeds go to Covid19 Research!</h3>
+             <h1 className="heading">
+                Utylzing AI to Monitor and Curtail AI!</h1>
+             <h3 className="heading2">Identifying Percentage of Malicious AI!</h3>
              <h3 className="heading2">Click On Images for Details</h3>
              
              <div className="menu-grid-content">

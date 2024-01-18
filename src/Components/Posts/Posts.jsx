@@ -75,14 +75,14 @@ handleNewItem = () => {
 
                 <div>
                 <button className="button3" 
-                    onClick={() => this.handleNewItem()}>Create New Post</button>
+                    onClick={() => this.handleNewItem()}>Analyze Anything for AI </button>
                 </div>
 
                 <div>
                 <body>
                 <table>
                 <tr>
-                <th> Post Id </th>
+                <th> Subject  </th>
                 <th> Title </th>
                 <th> Date </th>
                 <th> Body </th>
@@ -106,17 +106,17 @@ handleNewItem = () => {
                 <td> {post.money}</td>
                 <td> 
                     <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handleeReply(post)}>Reply</button>
+                    onClick={()=>this.handleeReply(post)}>ANALYZE Scans Percentage of JS Python Java </button>
                 </td>
 
                 <td> 
                     <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handleUpdate(post)}>Update</button>
+                    onClick={()=>this.handleUpdate(post)}>Neural Network Updates</button>
                 </td>
 
                 <td> 
                     <button className="btn btn-danger btn-sm"
-                    onClick={()=>this.handelDelete(post)}>Delete</button>
+                    onClick={()=>this.handelDelete(post)}>Delete Forever</button>
                 </td>
                 </tr>
                 )

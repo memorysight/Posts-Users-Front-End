@@ -60,7 +60,15 @@ export default class HeroImage extends Component {
 
         return (
             <>  
-                <h1 className="heading">Welcome EAA!</h1>
+                <h1 className="heading">Safeguard Against AI</h1>
+                <h2 className="heading">Ascertain Percentage of Ai Involvement</h2>
+                <h3 className="heading">Which was Generated using AI?</h3>
+
+
+   {/* <h1 className="heading">oliajsdfolijadsf ojkaisjfoiasfe oiajf eoij </h1>
+                <h2 className="heading">kandsfkjnaskjfnakd lkjadsnfkajdnf </h2>
+                <h3 className="heading">asdfjn asdoifnkniuas fn </h3> */}
+
                 {posts.length >= 3 && 
                     <div className="hero-image">{this.getRandomPosts()}</div>
                

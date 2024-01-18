@@ -34,6 +34,14 @@
     width: 100%;
     max-width: 100%;
     height: auto; 
+
+/* cool offset */
+    /* width:  300px; */
+    /* height: 300px; */
+    /* object-fit: cover; */
+
+
+    
     
     font-family: 'Oswald', sans-serif;
     font-family: 'Sigmar One', cursive;
@@ -68,7 +76,7 @@
     border-left: 10px;
     letter-spacing: 2px;
     /* direction: rtl; */
-    text-shadow: 3px 2px white;
+     animation: shadowAnimate 5s infinite;
     vertical-align: text-top;
     padding-left: 50px;
     text-align: center;
@@ -109,10 +117,12 @@
     border-left: 10px;
     letter-spacing: 2px;
     /* direction: rtl; */
-    text-shadow: 3px 2px white;
+    /* text-shadow: animation shadowAnimate 10s infinite ;
+    -webkit-text-stroke: shadowAnimate 10s infinite; */
     vertical-align: text-top;
     padding-left: 50px;
     text-align: center;
+    text-shadow: -11px 7px 0 #1fbfd4;
 }
 
 input[type=text] {
@@ -120,23 +130,25 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 2px solid red;
+    border: 2px solid rgb(17, 19, 12);
     border-radius: 4px;
   }
 
   .button2:hover {
-    background-color: grey; /* Green */
-    color: white;
+    background-color: rgb(204, 55, 29); /* Green */
+    color: rgb(248, 250, 247);
     /* Green */
     /* transition-duration: 0.4s;
     color: white;
     border-radius: 12px;
     padding: 32px 16px; */
   }
+
+  
   .button2 {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: #C8241A; /* Green */
-    color: white;
+    background-color: #2e2ca7; /* Green */
+    color: rgb(243, 243, 248);
     transition-duration: 0.4s;
     border-radius: 12px;
     padding: 32px 16px;
@@ -150,8 +162,8 @@ input[type=text] {
 
   .button3 {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: #459DAB; /* Green */
-    color: black;
+    background-color: rgb(43, 54, 153); /* Green */
+    color: rgb(9, 12, 2);
     transition-duration: 0.4s;
     border-radius: 12px;
     padding: 32px 16px;
@@ -163,9 +175,9 @@ input[type=text] {
   }
 
   .button3:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: #C8241A; /* Green */
-    color: white;
+    box-shadow: 0 12px 16px 0 rgba(46, 137, 212, 0.24), 0 17px 50px 0 rgba(224, 10, 10, 0.19);
+    background-color: #1b2719; /* Green */
+    color: rgb(28, 199, 170);
     transition-duration: 0.4s;
     border-radius: 12px;
     padding: 32px 16px;
@@ -178,16 +190,16 @@ input[type=text] {
   table {
     border-collapse: collapse;
     width: 100%;
-    background-color: #DAE8E5;
+    background-color: rgb(163, 219, 207);
   }
   
   th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #031213; 
   }
   
-  tr:hover {background-color:#f5f5f5;}
+  tr:hover {background-color:#6ba7a4;}
 
   option {
     font-family:"Courier New",Courier;
@@ -195,8 +207,8 @@ input[type=text] {
     padding:1em;
     width:20em;
     font-weight:bold;
-    color:#4A4B48;
-    background-color:#F0E7C7;
+    color:#02090f;
+    background-color:#50e281;
     width:40em;
     border:2px  #C8241A;
     text-align: center;
@@ -208,7 +220,7 @@ input[type=text] {
     border-radius: 50%;
     transition-duration: 0.4s;
     background-color: #C8241A; /* Green */
-    color: white;
+    color: rgb(211, 193, 32);
     
 
   }
@@ -216,34 +228,64 @@ input[type=text] {
   .button4:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     width: 10%;
-    background-color:#EDC7A9;
+    background-color:#131b63;
     color: black;
 
   }
 
  .imageContainer img{
-   width:440px;
+   /* width:440px; */
+   width:  650px;
+   height: 650px;
+   object-fit: cover;
  }
 
  @keyframes bgcolor {
   0% {
-      background-color: #95b7cf
+      background-color: #1fbfd4
   }
 
-  30% {
-      background-color: #7fb3d8
+  45% {
+      background-color: #74be74
   }
 
   60% {
-      background-color: #b9c49e
+      background-color: #13a883
   }
 
   90% {
-      background-color: rgb(185, 219, 168)
+      background-color: rgb(188, 226, 190)
   }
 
   100% {
-      background-color: #e7dc9e
+      background-color: #aaf7c8
+  }
+}
+
+@keyframes shadowAnimate {
+  0% {
+      text-shadow: -10px -4px 0 #1fbfd4
+  }
+
+  20% {
+    text-shadow: -0px -6px 3px #1fbfd4
+}
+
+
+  45% {
+    text-shadow: 7px -8px 0 #1fbfd4
+  }
+
+  60% {
+    text-shadow: 14px 17px 5px #1fbfd4
+  }
+
+  90% {
+    text-shadow: -11px 7px 0 #1fbfd4
+  }
+
+  100% {
+    text-shadow: -12px -13px 0 #1fbfd4
   }
 }
 
@@ -252,4 +294,6 @@ body {
   animation: bgcolor 10s infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  
+  
 }

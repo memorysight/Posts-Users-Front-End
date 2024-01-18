@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Oswald|Righteous|Sigmar+One&display=swap');
 
 .navbar{
-    background: grey;
+    background: rgb(80, 107, 184);
     
   }
   li {
@@ -16,19 +16,19 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:rgb(126, 124, 255);
+    background-color: rgb(48, 140, 165);
     font-family: 'Oswald', sans-serif;
 font-family: 'Sigmar One', cursive;
 font-family: 'Righteous', cursive;
 font-family: 'Cinzel', serif;
 border-style: inset;
-border-block-color: black;
+border-block-color: rgb(18, 20, 158);
 
   }
   
   li {
     float: left;
-    border-right:1px solid #bbb;
+    border-right:1px solid #051615;
   }
   
   li:last-child {
@@ -37,18 +37,18 @@ border-block-color: black;
   
   li a {
     display: block;
-    color: black;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
   li a:hover:not(.active) {
-    background-color: #111;
+    background-color: #16b3a5;
   }
   
   .active {
-    background-color: #4CAF50;
+    background-color: #127018;
   }
   
   .navbar-heading{
@@ -61,7 +61,7 @@ border-block-color: black;
     border-left: 10px;
     letter-spacing: 2px;
     /* direction: rtl; */
-    text-shadow: 3px 2px white;
+    text-shadow: 3px 2px rgb(110, 187, 9);
     vertical-align: text-top;
     padding-left: 50px;
   }

@@ -104,7 +104,7 @@ export default class NewUser extends Component {
                         </div>
                         
                         <div className="kitchen-details">
-                            <label htmlFor="posts">Select a post to associate with this user</label>
+                            <label htmlFor="posts">Exploits Nullified </label>
                             <select id="posts" multiple onChange={this.handleOptionsChange}>
                                 {this.state.postsFromApi.map(({postId, title}) => {
                                     return <option value={postId}>{title}</option>;

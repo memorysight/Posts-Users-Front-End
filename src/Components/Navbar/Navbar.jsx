@@ -14,12 +14,16 @@ const NavBar=()=> {
                 </li>
                
                 <li>
-                    <Link to="/posts">Posts</Link>
+                    <Link to="/posts">AI Exploit </Link>
                 </li>
                 <li>
-                    <Link to="/users">Users</Link>
+                    <Link to="/users">Exploit Engineer</Link>
                 </li>
-                <h3 className="navbar-heading">Exotic Auto Auction 2020 </h3>
+                <h3 className="navbar-heading">Monitoring Malicious AI Applications (MMAA) </h3>
+
+
+                {/* <h3 className="navbar-heading">loiasmfd aklindmf lim alskfm  (MMAA) </h3> */}
+              
                
             </ul>
             

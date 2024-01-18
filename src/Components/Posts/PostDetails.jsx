@@ -71,7 +71,7 @@ import './Post.css';
                          
                     }
                 </div>
-                <h4 className="heading">Users In the Running to Win this Post</h4>
+                <h4 className="heading">Exploits Employed/ Experts Engaged</h4>
           
             
               
@@ -83,7 +83,7 @@ import './Post.css';
               
 
                 <div className="heading">
-                    <h2 >Select the Best Caption!</h2>
+                    <h2 >Targeted Exploit Eliminator</h2>
                    <hr></hr>
                     { selectedUser && 
                         <div>
